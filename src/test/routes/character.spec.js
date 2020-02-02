@@ -16,7 +16,7 @@ describe('Character Route', function() {
         expect(data).to.have.property('docs');
         expect(data.docs).to.be.an('array');
         expect(data.docs).to.have.lengthOf(10);
-        expect(data.docs[0].race).to.eql('');
+        expect(data.docs[0].race).to.eql('Ainur');
         done(err);
       });
   });
