@@ -12,8 +12,8 @@ if (app.get('env') === 'development') {
   app.use(logger('dev'));
 }
 
-app.use('/movie', movieRouter);
-app.use('/character', charRouter);
+app.use('/api/v1/movie', movieRouter);
+app.use('/api/v1/character', charRouter);
 
 //404 Page
 app.all('*', (req, res, next) => {

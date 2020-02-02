@@ -6,7 +6,7 @@ describe('Character Route', function() {
   this.timeout(3000);
   it('should successfully fetch and paginate characters', done => {
     request(app)
-      .get(`/character?limit=10&sort=race`)
+      .get(`/api/v1/character?limit=10&sort=race`)
       .set('Authorization', `Bearer ${process.env.API_KEY}`)
       .end((err, res) => {
         const { status, data } = res.body;
@@ -22,7 +22,7 @@ describe('Character Route', function() {
   });
   it('should successfully paginate characters into pages', done => {
     request(app)
-      .get(`/character?limit=10&page=2`)
+      .get(`/api/v1/character?limit=10&page=2`)
       .set('Authorization', `Bearer ${process.env.API_KEY}`)
       .end((err, res) => {
         const { status, data } = res.body;

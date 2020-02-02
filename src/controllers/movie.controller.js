@@ -21,7 +21,7 @@ movieController.getMovies = async (req, res) => {
       data: movies
     });
   } catch (err) {
-    res.status(400).json({
+    res.status(500).json({
       status: 'error',
       error: err
     });

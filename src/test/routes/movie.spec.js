@@ -5,7 +5,7 @@ import app from '../../app';
 describe('Movie Route', () => {
   it('should successfully fetch, format and sort movie data', done => {
     request(app)
-      .get(`/movie?sort=budget`)
+      .get(`/api/v1/movie?sort=budget`)
       .set('Authorization', `Bearer ${process.env.API_KEY}`)
       .end((err, res) => {
         const { status, data } = res.body;
@@ -27,7 +27,7 @@ describe('Movie Route', () => {
   });
   it('should sort movie data in descending order', done => {
     request(app)
-      .get(`/movie?sort=-runtime`)
+      .get(`/api/v1/movie?sort=-runtime`)
       .set('Authorization', `Bearer ${process.env.API_KEY}`)
       .end((err, res) => {
         const { status, data } = res.body;
