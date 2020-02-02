@@ -3,7 +3,7 @@ import request from 'supertest';
 import app from '../../app';
 
 describe('Character Route', function() {
-  this.timeout(3000);
+  this.timeout(6000);
   it('should successfully fetch and paginate characters', done => {
     request(app)
       .get(`/api/v1/character?limit=10&sort=race`)
