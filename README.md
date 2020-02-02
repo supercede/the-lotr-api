@@ -76,11 +76,11 @@ Each response will be returned with one of the following HTTP status codes:
 | 
 
 + Responses can be sorted and paginated using request queries. Allowed sorting parameters are `revenue`, `runtime`, `budget` for movies and `race` and `gender` for character. Adding a `-` before sorting parameters will sort in descending order.
-- <code>/api/1/movie?sort=revenue</code> will sort movies by revenue in ascending order
-- <code>/api/1/character?sort=-race</code> will sort characters by race in descending order
+  - <code>/api/1/movie?sort=revenue</code> will sort movies by revenue in ascending order
+  - <code>/api/1/character?sort=-race</code> will sort characters by race in descending order
 
 + Character responses can be paginated with two query parameters: `limit` and `page`. `limit` restricts the amount of results to show per page while `page` represents where to start showing results from.
-- <code>/api/v1/character?limit=8&page=3</code> will restrict response to 8 results per query and start from the third page, therefore showing results 17 to 24.
+  - <code>/api/v1/character?limit=8&page=3</code> will restrict response to 8 results per query and start from the third page, therefore showing results 17 to 24.
 
 
 ## License
