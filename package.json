@@ -2,11 +2,14 @@
   "name": "the-lotr-api",
   "version": "1.0.0",
   "description": "app to get and format data about the Lord of The Rings movies",
-  "main": "index.js",
+  "main": "apps.js",
   "scripts": {
+    "clean": "rm -rf .nyc_output build coverage && mkdir build",
+    "build": "npm run clean && npm run build-babel",
+    "start": "node ./build/app.js",
+    "build-babel": "babel -d ./build ./src -s",
     "test": "cross-env NODE_ENV=test nyc mocha ./src/test",
     "lint": "eslint \"**/*.js\"",
-    "start": "babel-node src/app.js",
     "dev": "nodemon --exec babel-node src/app.js"
   },
   "repository": {
