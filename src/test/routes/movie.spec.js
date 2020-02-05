@@ -2,7 +2,8 @@ import { expect } from 'chai';
 import request from 'supertest';
 import app from '../../app';
 
-describe('Movie Route', () => {
+describe('Movie Route', function() {
+  this.timeout(5000);
   it('should successfully fetch, format and sort movie data', done => {
     request(app)
       .get(`/api/v1/movie?sort=budget`)
