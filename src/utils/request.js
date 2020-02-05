@@ -7,10 +7,12 @@ const headers = {
   Authorization: `Bearer ${process.env.API_KEY}`
 };
 
-const axiosRequest = async param => {
+const axiosRequest = async (route, param) => {
   try {
     return await axios({
-      url: `${process.env.URL}/${param}`,
+      url: param
+        ? `${process.env.URL}/${route}/${param}`
+        : `${process.env.URL}/${route}`,
       headers
     });
   } catch (err) {

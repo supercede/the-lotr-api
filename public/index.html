@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>The Lord of The Rings Movies API</h1>
+
+    <h2>Project Overview</h2>
+
+    <p>
+      This api fetches data from
+      <a href="https://the-one-api.herokuapp.com/">The LOTR API</a> about the
+      movies in the Lord of The Rings and The Hobbit series and displays them in
+      well formatted, properly paginated forms.
+    </p>
+
+    <h2>Features</h2>
+
+    <ol>
+      <li>Requires no authentication on the part of the user.</li>
+      <li>User can get all the movies</li>
+      <li>User can get all characters in the movie universe.</li>
+      <li>
+        User can sort queries by different fields in ascending and descending
+        order.
+      </li>
+      <li>Movies can be sorted by revenue, runtime, and budget.</li>
+      <li>Characters cn be sorted by race and gender.</li>
+    </ol>
+
+    <h2>Technologies Used</h2>
+
+    <ul>
+      <li><a href="https://nodejs.org/en/download/">NodeJS</a></li>
+      <li><a href="https://expressjs.com/">ExpressJS</a></li>
+    </ul>
+
+    <h2>HTTP Requests</h2>
+
+    <p>
+      All API requests are made by sending a secure HTTPS request using the
+      <code>GET</code> method to Get a list of resources
+    </p>
+
+    <h3>HTTP Response Codes</h3>
+
+    <p>
+      Each response will be returned with one of the following HTTP status
+      codes:
+    </p>
+
+    <ul>
+      <li><code>200</code> <code>OK</code> The request was successful</li>
+      <li>
+        <code>400</code> <code>Bad Request</code> There was a problem with the
+        request (security, malformed)
+      </li>
+      <li>
+        <code>500</code> <code>Server Error</code> An error on the server
+        occurred
+      </li>
+    </ul>
+
+    <h3>API ENDPOINTS</h3>
+
+    <h4>API Routes</h4>
+
+    <table>
+      <tr>
+        <th>URI</th>
+        <th>HTTP Method</th>
+        <th>Description</th>
+      </tr>
+
+      <tr>
+        <td><code>/api/v1/movie</code></td>
+        <td><code>GET</code></td>
+        <td>Fetch all Movies</td>
+      </tr>
+
+      <tr>
+        <td><code>/api/v1/character</code></td>
+        <td><code>GET</code></td>
+        <td>Fetch all Characters</td>
+      </tr>
+
+      <tr>
+        <td><code>/api/v1/character/:id</code></td>
+        <td><code>GET</code></td>
+        <td>Fetch one Character</td>
+      </tr>
+    </table>
+
+    
+        <p>
+          Responses can be sorted and paginated using request queries. Allowed
+          sorting parameters are <code>revenue</code>, <code>runtime</code>,
+          <code>budget</code> for movies and <code>race</code> and
+          <code>gender</code> for character. Adding a <code>-</code> before
+          sorting parameters will sort in descending order.
+        </p>
+
+        <ul>
+          <li>
+            <code>/api/1/movie?sort=revenue</code> will sort movies by revenue
+            in ascending order
+          </li>
+          <li>
+            <code>/api/1/character?sort=-race</code> will sort characters by
+            race in descending order
+          </li>
+        </ul>
+        <p>
+          Character responses can be paginated with two query parameters:
+          <code>limit</code> and <code>page</code>. <code>limit</code> restricts
+          the amount of results to show per page while
+          <code>page</code> represents where to start showing results from.
+        </p>
+
+        <ul>
+          <li>
+            <code>/api/v1/character?limit=8&amp;page=3</code> will restrict
+            response to 8 results per query and start from the third page,
+            therefore showing results 17 to 24.
+          </li>
+        </ul>
+
+    <h2>License</h2>
+
+    <p>
+      This project is open-sourced software licensed under the
+      <a href="https://opensource.org/licenses/MIT">MIT license</a>.
+    </p>
+  </body>
+</html>

@@ -71,9 +71,9 @@ Each response will be returned with one of the following HTTP status codes:
 
 | URI                                                     | HTTP Method | Description                               |
 | ------------------------------------------------------- | ----------- | ----------------------------------------- |
-| <code>/api/v1/movie</code>                              | `GET`       | Fetch all Movies                           |
-| <code>/api/v1/character</code>                      | `GET`       | Fetch all characters              |
-| 
+| <code>/api/v1/movie</code>                              | `GET`       | Fetch all Movies                          |
+| <code>/api/v1/character</code>                          | `GET`       | Fetch all characters                      |
+| <code>/api/v1/character/:id</code>                      | `GET`       | Fetch a character                         |
 
 + Responses can be sorted and paginated using request queries. Allowed sorting parameters are `revenue`, `runtime`, `budget` for movies and `race` and `gender` for character. Adding a `-` before sorting parameters will sort in descending order.
   - <code>/api/1/movie?sort=revenue</code> will sort movies by revenue in ascending order
