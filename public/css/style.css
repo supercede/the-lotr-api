@@ -10,7 +10,9 @@ code {
 }
 
 a {
-    color: lightblue
+    color: white;
+    background-color: black;
+    padding: 1px;
 }
 
 table, tr, td, th {

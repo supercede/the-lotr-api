@@ -14,7 +14,7 @@ This api fetches data from [The LOTR API](https://the-one-api.herokuapp.com/) ab
 6. Characters cn be sorted by race and gender.
 
 ## Project Pipeline
-- [Hosted API]()
+- [Hosted API](https://lotr-api.herokuapp.com/)
 
 ## Technologies Used
 
