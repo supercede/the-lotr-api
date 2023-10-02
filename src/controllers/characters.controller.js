@@ -1,18 +1,7 @@
-import redis from 'redis';
-import { config } from 'dotenv';
+import client from '../services/redis';
 import { sortBy } from '../utils/sort';
 import paginate from '../utils/pagination';
 import axiosRequest from '../utils/request';
-
-const REDIS_PORT = process.env.REDIS_PORT || 6379;
-
-let client;
-if (process.env.REDIS_URL) {
-  client = redis.createClient(process.env.REDIS_URL);
-} else {
-  client = redis.createClient(REDIS_PORT);
-}
-config();
 
 const charController = {};
 
@@ -27,7 +16,6 @@ charController.getCharacters = async (req, res) => {
     const limit = req.query.limit || 100;
     const pageNumber = req.query.page || 1;
     const data = paginate(characters.docs, pageNumber, limit);
-    // console.log(characters.docs.length);
 
     res.status(200).json({
       status: 'success',
@@ -85,7 +73,7 @@ charController.cache = (req, res, next) => {
         data: JSON.parse(data)
       });
     });
-  } catch(err) {
+  } catch (err) {
     res.status(500).json({
       status: 'error',
       error: err
